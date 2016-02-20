@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/action_serch"
+        android:layout_width = "match_parent"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always" />
+
+    <!-- <item android:id="@+id/gps_serch"
+        android:icon="@drawable/ic_gps_fixed"
+        android:title="@string/gps_serch"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+    -->
+
+    <item android:id="@+id/action_settings"
+        android:icon="@drawable/ic_more_vert"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="always">
+
+    <menu>
+        <item android:id="@+id/help"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="ヘルプ"
+            android:showAsAction="ifRoom|withText"
+            tools:ignore="AppCompatResource" />
+
+        <item android:id="@+id/end"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            android:title="終了"
+            android:showAsAction="ifRoom|withText"
+            tools:ignore="AppCompatResource" />
+    </menu>
+    </item>
+
+</menu>
