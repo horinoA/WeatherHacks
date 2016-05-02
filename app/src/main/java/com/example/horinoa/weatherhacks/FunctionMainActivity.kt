@@ -2,7 +2,6 @@ package com.example.horinoa.weatherhacks
 
 import android.util.Log
 import android.view.View
-import android.widget.TextView
 import com.google.gson.Gson
 import kotlin.properties.Delegates
 import java.lang.Math.*
@@ -45,19 +44,19 @@ class FunctionMainActivity(val delegate:WeatherHackable) : WeatherHackable by de
             }
             try{
                 callback?.forecasts?.get(1).let {
-                v.tomorrowData.setText(it?.date)
-                v.tomorrowTelop.setText(it?.telop)
-                val tomorrowmin = if(it?.temperature?.min?.celsius != null){
-                    it?.temperature?.min?.celsius?.toString() + v.getResources().getString(R.string.celsiusUnit)
-                }else{
+                    v.tomorrowData.setText(it?.date)
+                    v.tomorrowTelop.setText(it?.telop)
+                    val tomorrowmin = if(it?.temperature?.min?.celsius != null){
+                        it?.temperature?.min?.celsius?.toString() + v.getResources().getString(R.string.celsiusUnit)
+                    }else{
+                        v.getResources().getString(R.string.celsiusNull)
+                    }
+                    val tomorrowmax = if(it?.temperature?.max?.celsius != null){
+                        it?.temperature?.max?.celsius?.toString() + v.getResources().getString(R.string.celsiusUnit)
+                    }else{
                     v.getResources().getString(R.string.celsiusNull)
-                }
-                val tomorrowmax = if(it?.temperature?.max?.celsius != null){
-                    it?.temperature?.max?.celsius?.toString() + v.getResources().getString(R.string.celsiusUnit)
-                }else{
-                    v.getResources().getString(R.string.celsiusNull)
-                }
-                v.tomorrowTemperture.setText(tomorrowmin + "/" + tomorrowmax)
+                    }
+                    v.tomorrowTemperture.setText(tomorrowmin + "/" + tomorrowmax)
             }
             }catch(e:IndexOutOfBoundsException){
                 Log.d("error","forecasts(1)error")
@@ -86,7 +85,7 @@ class FunctionMainActivity(val delegate:WeatherHackable) : WeatherHackable by de
 
     fun childViewInit(v:MainActivity){
         v.city.setText(v.getResources().getString(R.string.celsiusNull))
-        v.telop.setText(v.getResources().getString(R.string.celsiusNull))
+        v.telop?.setText(v.getResources().getString(R.string.celsiusNull))
         v.temperature.setText(v.getResources().getString(R.string.celsiusNull))
         v.tomorrowData.setText(v.getResources().getString(R.string.celsiusNull))
         v.tomorrowTelop.setText(v.getResources().getString(R.string.celsiusNull))

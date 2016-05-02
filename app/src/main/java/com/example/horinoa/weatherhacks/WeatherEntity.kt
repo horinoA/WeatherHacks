@@ -1,13 +1,6 @@
 package com.example.horinoa.weatherhacks
 
-import android.content.Context
 import java.util.*
-import com.example.horinoa.weatherhacks.RestAPI.*
-
-interface WeatherHackable{
-    fun retroFitCall(city: String?,callback:(WeatherEntity?) -> Unit)
-    fun getGeocode(address:String,context: Context,callback:(Position?) -> Unit)
-}
 
 //LiveDoor 天気Json用データクラス
 //@Generated("org.jsonschema2pojo")

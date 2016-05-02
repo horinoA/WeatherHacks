@@ -37,7 +37,6 @@ class RestAPI:WeatherHackable {
         try{
             getAddress = gcoder.getFromLocationName(address,1)
             if (getAddress != null && getAddress.size > 0){
-                Log.d("geo",getAddress.get(0).locality)
                 val position = Position(mapOf(
                         "lat" to getAddress.get(0).latitude,
                         "lng" to getAddress.get(0).longitude
